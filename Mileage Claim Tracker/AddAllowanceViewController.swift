@@ -49,6 +49,7 @@ class AddAllowanceViewController: UIViewController {
         dateTextFiled.applyRoundedCorners()
         journeyStartTextField.applyRoundedCorners()
         journeyEndTextField.applyRoundedCorners()
+        claimAmounttextField.applyRoundedCorners()
         updateMileageButton.applyRoundedCorners()
         calculateMileageButton.applyRoundedCorners()
         
@@ -64,16 +65,15 @@ class AddAllowanceViewController: UIViewController {
                 let dateString = formatter.string(from: date)
                 dateTextFiled.text = dateString
             }
-            
             journeyStartTextField.text = mileageEntry.journeyEnd
             journeyEndTextField.text = ""
-            resultLabel.text = "Current Mileage Is:"
-            result2Label.text = mileageEntry.total
+            claimAmounttextField.text = mileageEntry.pencePerMile
+            resultLabel.text = mileageEntry.total
+            result2Label.text = mileageEntry.amountClaimed
             saveButton.isEnabled = false
             updateMileageButton.isHidden = false
             calculateMileageButton.isHidden = true
-            imageView.alpha = 0.2
-            youCanClaimLabel.text = mileageEntry.amountClaimed
+            imageView.alpha = 0.3
         }  else  {
             title = "Compose"
             saveButton.isEnabled = false
@@ -85,8 +85,6 @@ class AddAllowanceViewController: UIViewController {
             updateMileageButton.isHidden = true
             resultLabel.isHidden = true
             result2Label.isHidden = true
-            //resultLabel.text = ""
-            //result2Label.text = ""
             mileageSoFarLabel.isHidden = true
             youCanClaimLabel.isHidden = true
             howMuchAreYouClaimingLabel.isHidden = true
@@ -124,29 +122,37 @@ class AddAllowanceViewController: UIViewController {
                 if endMileageAsInt! <= startMileageAsInt! {
                     Alert.fieldAlert(on: self)
                 } else if endMileageAsInt! > startMileageAsInt! {
-                    guard let currentMileage = result2Label.text else { return }
+                    
+                    guard let currentMileage = resultLabel.text else { return }  // red label
                     guard let currentMileageAsInt = Int(currentMileage) else { return }
                     
                     guard let previousMileageAtEnd = journeyStartTextField.text else {return }
-                    guard let previousMileageAtEndAsInt = Int(previousMileageAtEnd) else { return}
+                    guard let previousMileageAtEndAsInt = Int(previousMileageAtEnd) else { return} // now the current start mileage
                     
                     guard let newMileageAtEnd = journeyEndTextField.text else { return }
-                    guard let newMileageAtEndAsInt = Int(newMileageAtEnd) else { return }
+                    guard let newMileageAtEndAsInt = Int(newMileageAtEnd) else { return } // now the current end mileage
                     
                     let latestMileageSum = newMileageAtEndAsInt - previousMileageAtEndAsInt
-                    let updatedMileage = currentMileageAsInt + latestMileageSum
+                    let updatedMileage = currentMileageAsInt + latestMileageSum // the start and end fileds
                     
-                    let amountToClaim = 0.45
-                    let mileage = String(updatedMileage)
-                    let updatedAmountToClaim = amountToClaim * Double(mileage)!
-                    let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", updatedAmountToClaim)
+                    guard let pencePerMileClaim = claimAmounttextField.text else { return }
+                    guard let pencePerMileClaimAsDouble = Double(pencePerMileClaim) else { return }// get ppmile as double
                     
-                    result2Label.text = String(updatedMileage)
+                    guard let previousAmountClaimed = result2Label.text else { return }
+                    guard let previousAmountClaimedAsDouble = Double(previousAmountClaimed) else { return }// got previous amounc claimed
+                    
+                    let newMileageClaim = pencePerMileClaimAsDouble * Double(currentMileageAsInt)
+                    let newUpdatedTotal = newMileageClaim + previousAmountClaimedAsDouble
+                    
+                  
+                    let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", newUpdatedTotal)
+                    
+                    resultLabel.text = String(updatedMileage)
+                    result2Label.text = showAmountToClaimWith2DecimalPlaces
+                    //result2Label.text = "£\(showAmountToClaimWith2DecimalPlaces)"
                     saveButton.isEnabled = true
                     updateMileageButton.isEnabled = false
                     youCanClaimLabel.isHidden = false
-                    youCanClaimLabel.isHidden = false
-                    youCanClaimLabel.text = "£\(showAmountToClaimWith2DecimalPlaces)"
                 }
             }
         }
@@ -164,10 +170,8 @@ class AddAllowanceViewController: UIViewController {
                     let amountToClaim = Double(mileage)! * pencePerMile!
                     let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", amountToClaim)
                     
-                    resultLabel.text = "Your Total Mileage\nSo Far Is:\n\(total)"
-                    result2Label.text = "£\(showAmountToClaimWith2DecimalPlaces)"
-                    //result2Label.text = String(total)
-                    //youCanClaimLabel.text = "£\(showAmountToClaimWith2DecimalPlaces)"
+                    resultLabel.text = mileage
+                    result2Label.text = showAmountToClaimWith2DecimalPlaces
                 }
             }
         }
@@ -199,9 +203,10 @@ class AddAllowanceViewController: UIViewController {
     func updateEntry()  {
         mileageEntry.journeyStart = self.journeyStartTextField.text
         mileageEntry.journeyEnd = self.journeyEndTextField.text
-        mileageEntry.total = self.result2Label.text
+        mileageEntry.pencePerMile = self.claimAmounttextField.text
+        mileageEntry.total = self.resultLabel.text
         mileageEntry.date = self.datePicker.date
-        mileageEntry.amountClaimed = self.youCanClaimLabel.text
+        mileageEntry.amountClaimed = self.result2Label.text
         
         do  {
             try managedObjectContext.save()
@@ -214,11 +219,12 @@ class AddAllowanceViewController: UIViewController {
         let mileageEntryEntity = NSEntityDescription.entity(forEntityName: "MileageEntry", in: managedObjectContext)!
         let newMileageEntry = MileageEntry(entity: mileageEntryEntity, insertInto: managedObjectContext)
         
+        newMileageEntry.date = self.datePicker.date
         newMileageEntry.journeyStart = self.journeyStartTextField.text
         newMileageEntry.journeyEnd = self.journeyEndTextField.text
-        newMileageEntry.total = self.result2Label.text
-        newMileageEntry.date = self.datePicker.date
-        newMileageEntry.amountClaimed = self.youCanClaimLabel.text
+        newMileageEntry.pencePerMile = self.claimAmounttextField.text
+        newMileageEntry.total = self.resultLabel.text
+        newMileageEntry.amountClaimed = self.result2Label.text
         
         do  {
             try managedObjectContext.save()

@@ -17,6 +17,35 @@ class AllowanceTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedObjectContext = appDelegate.persistentContainer.viewContext
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchEntries()
+    }
+    
+    func fetchEntries()  {
+        let fetchRequest = NSFetchRequest<MileageEntry>(entityName: "MileageEntry")
+        
+        let dateSort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        do  {
+            let entryObjects = try managedObjectContext.fetch(fetchRequest)
+            self.mileageEntries = entryObjects as [MileageEntry]
+        } catch let error as NSError  {
+            print("Could Not Fetch Entries \(error.localizedDescription)")
+        }
+        self.tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "didSelectRow"  {
+            let composeVC = segue.destination as! AddAllowanceViewController
+            composeVC.mileageEntry = sender as? MileageEntry
+        }
     }
 
     // MARK: - Table view data source
@@ -35,13 +64,14 @@ class AllowanceTableTableViewController: UITableViewController {
         let entry = self.mileageEntries[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         //  cell.textLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(22))
-        cell.textLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 22)
+        cell.textLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 17)
         
         if let date = entry.date {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE, dd - MM - yyy"
             let dateString = formatter.string(from: date)
-            cell.textLabel?.text = "\(dateString)\n\(entry.total ?? "0") Miles Claimed\nYou Can Claim - \(entry.amountClaimed ?? "£")"
+            
+            cell.textLabel?.text = "\(dateString)\nCurrent Mileage Amount = \(entry.total ?? "0")\nCurrent Amount Claimed = \(entry.amountClaimed ?? "0")"
             
             if (dateString.contains("Monday"))  {
                 cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 1)

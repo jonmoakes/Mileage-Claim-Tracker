@@ -69,7 +69,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTa-oT-fuO">
                                                 <rect key="frame" x="151" y="8" width="18" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uu-W0-QyF">
@@ -139,12 +139,18 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                                 <state key="normal" title="Tap To Calculate"/>
+                                                <connections>
+                                                    <action selector="calculateButtonTapped:" destination="WXr-IS-pFO" eventType="touchUpInside" id="U9G-G0-GdI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v8-3X-Go9">
                                                 <rect key="frame" x="16" y="457.5" width="288" height="41"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                                 <state key="normal" title="Tap To Update"/>
+                                                <connections>
+                                                    <action selector="updateButtonTapped:" destination="WXr-IS-pFO" eventType="touchUpInside" id="xZP-U1-uEJ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Mileage So Far Is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8W-JH-XHx">
                                                 <rect key="frame" x="8" y="518.5" width="304" height="30"/>
@@ -255,7 +261,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fah-rh-c3X"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cIP-ZB-7tH">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UHq-Xf-ibr">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="WXr-IS-pFO" id="dfj-dT-WB3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="320" height="800"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="9uu-W0-QyF" id="GL0-k9-dL4"/>
+                        <outlet property="calculateMileageButton" destination="DJj-oz-zCf" id="62g-oj-u0v"/>
+                        <outlet property="claimAmounttextField" destination="V5q-6l-75x" id="w7A-33-ofl"/>
+                        <outlet property="dateTextFiled" destination="6Kn-Ga-hsV" id="3wl-kl-bAc"/>
+                        <outlet property="howMuchAreYouClaimingLabel" destination="WUR-gj-AKz" id="waR-Dx-N5p"/>
+                        <outlet property="imageView" destination="dj5-QI-1tL" id="Dxf-tO-0qz"/>
+                        <outlet property="journeyEndTextField" destination="5gl-5c-aU7" id="Nyk-jD-et2"/>
+                        <outlet property="journeyStartTextField" destination="gWu-39-lgg" id="STz-pF-IP5"/>
+                        <outlet property="mileageEndLabel" destination="KOw-d1-TJ6" id="tJP-HK-wUo"/>
+                        <outlet property="mileageSoFarLabel" destination="M8W-JH-XHx" id="vV8-Yl-Sku"/>
+                        <outlet property="mileageStartLabel" destination="QGU-0y-sbR" id="EtO-xG-teF"/>
+                        <outlet property="result2Label" destination="kaQ-dX-xzj" id="GgR-v7-ett"/>
+                        <outlet property="resultLabel" destination="IM7-r9-VAu" id="5yD-8D-A5t"/>
+                        <outlet property="saveButton" destination="UHq-Xf-ibr" id="UkL-u7-c9b"/>
+                        <outlet property="topLabel" destination="JTa-oT-fuO" id="Kkg-Vr-Vc4"/>
+                        <outlet property="updateMileageButton" destination="5v8-3X-Go9" id="LIz-IP-ccT"/>
+                        <outlet property="youCanClaimLabel" destination="5YK-Q5-cuY" id="aah-SQ-9f5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zr7-a6-ygl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

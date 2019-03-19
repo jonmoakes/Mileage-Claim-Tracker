@@ -164,9 +164,10 @@ class AddAllowanceViewController: UIViewController {
                     let amountToClaim = Double(mileage)! * pencePerMile!
                     let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", amountToClaim)
                     
-                    resultLabel.text = "Your Total Mileage\nSo Far Is:"
-                    result2Label.text = String(total)
-                    youCanClaimLabel.text = "£\(showAmountToClaimWith2DecimalPlaces)"
+                    resultLabel.text = "Your Total Mileage\nSo Far Is:\n\(total)"
+                    result2Label.text = "£\(showAmountToClaimWith2DecimalPlaces)"
+                    //result2Label.text = String(total)
+                    //youCanClaimLabel.text = "£\(showAmountToClaimWith2DecimalPlaces)"
                 }
             }
         }
@@ -181,13 +182,15 @@ class AddAllowanceViewController: UIViewController {
                     Alert.fieldAlert(on: self)
                 } else if endMileageAsInt! > startMileageAsInt! {
                     calculateTotal()
+                    
+                    
+                    mileageSoFarLabel.isHidden = false
                     resultLabel.isHidden = false
+                    youCanClaimLabel.isHidden = false
                     result2Label.isHidden = false
                     imageView.alpha = 0.3
-                    saveButton.isEnabled = true
                     calculateMileageButton.isEnabled = false
-                    youCanClaimLabel.isHidden = false
-                    youCanClaimLabel.isHidden = false
+                    saveButton.isEnabled = true
                 }
             }
         }

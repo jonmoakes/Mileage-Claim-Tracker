@@ -62,7 +62,7 @@ class AddAllowanceViewController: UIViewController {
             journeyEndTextField.text = ""
             claimAmounttextField.text = ""
             calculateMileageButton.setTitle("Tap To Update", for: .normal)
-            
+            calculateMileageButton.isEnabled = false
             resultLabel.text = mileageEntry.total
             result2Label.text = mileageEntry.amountClaimed
             saveButton.isEnabled = false
@@ -154,9 +154,7 @@ class AddAllowanceViewController: UIViewController {
             guard let pencePerMile = claimAmounttextField.text else { return }
             guard let pencePerMileAsDouble = Double(pencePerMile) else { return }
             
-            if dateTextFiled.text == "" || journeyStartTextField.text == "" || journeyEndTextField.text == "" || claimAmounttextField.text == "" {
-                Alert.incompleteFieldsAlert(on: self)
-            } else if dateTextFiled.text != dateString {
+            if dateTextFiled.text != dateString {
                 Alert.dateErrorAlert(on: self)
             } else if endMileageAsInt <= startMileageAsInt {
                 Alert.fieldAlert(on: self)
@@ -173,6 +171,7 @@ class AddAllowanceViewController: UIViewController {
                 resultLabel.text = String(newMileage)
                 result2Label.text = String(showAmountToClaimWith2DecimalPlaces)
                 saveButton.isEnabled = true
+                calculateMileageButton.isEnabled = false
             }
         }
     }
@@ -284,7 +283,11 @@ class AddAllowanceViewController: UIViewController {
     }
     
     @objc func  showCalculateButtonDoneButtonPressed()  {
-        calculateMileageButton.isHidden = false
+        if mileageEntry == nil {
+            calculateMileageButton.isHidden = false
+        } else if mileageEntry != nil && dateTextFiled.text != "" || journeyStartTextField.text != "" || journeyEndTextField.text != "" || claimAmounttextField.text != "" {
+            calculateMileageButton.isEnabled = true
+        }
         self.view.endEditing(true)
     }
 }

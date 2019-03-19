@@ -10,14 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Allowance Table Table View Controller-->
+        <!--Your Entries-->
         <scene sceneID="7GX-ZK-JV5">
             <objects>
                 <tableViewController id="1Cf-O4-h26" customClass="AllowanceTableTableViewController" customModule="Mileage_Claim_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBq-kJ-cQX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jTZ-jE-gKI">
@@ -34,7 +34,7 @@
                             <outlet property="delegate" destination="1Cf-O4-h26" id="DhI-dD-jw7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Lcz-Pi-c2G">
+                    <navigationItem key="navigationItem" title="Your Entries" id="Lcz-Pi-c2G">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CVq-Cz-DBL">
                             <connections>
                                 <segue destination="WXr-IS-pFO" kind="show" id="7FG-Wn-Hmh"/>
@@ -72,7 +72,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage Date:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZD-Rs-LTh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Entry:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZD-Rs-LTh">
                                                 <rect key="frame" x="8" y="28" width="304" height="30"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                                 <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -229,7 +229,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1529411765" green="0.36862745099999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="T7R-F7-bcm" firstAttribute="width" secondItem="a3y-u7-4mc" secondAttribute="width" id="G0w-wQ-Je0"/>
                                     <constraint firstItem="T7R-F7-bcm" firstAttribute="height" secondItem="a3y-u7-4mc" secondAttribute="height" priority="250" id="PbU-51-jNg"/>

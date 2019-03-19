@@ -29,5 +29,13 @@ struct Alert {
     static func fieldAlert(on vc: UIViewController) {
         showBasicAlert(on: vc, with: "Error", message: "Please Make Sure The 'Mileage At End Of Journey' Field Is A Greater Number Than The 'Mileage At Start Of Journey Field.'")
     }
+    
+    static func incompleteFieldsAlert(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Error", message: "Please Make Sure All Of The Fields Are Filled In.")
+    }
+    
+    static func dateErrorAlert(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Warning", message: "The Date You Have Chosen To For This Entry Does Not Match The Date You Chose When Originally Creating The Entry.\n\nIf You Chose This Date In Error, Please Select The Date Again And Make Sure It Matches The Date You Originally Chose When Creating The Entry.\n\nIf You Wish To Create A New Entry, Tap The Back Button And Then Tap The Plus Button In The Top Right To Create A New Entry.")
+    }
 }
 

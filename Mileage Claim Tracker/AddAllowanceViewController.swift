@@ -128,10 +128,17 @@ class AddAllowanceViewController: UIViewController {
                 saveButton.isEnabled = true
             }
         } else if calculateMileageButton.title(for: .normal) == "Tap To Update" {
+            
             let coreDataEntry = mileageEntry
             
             guard let previousMileage = coreDataEntry?.total else { return }
             guard let previousMileageAsDouble = Double(previousMileage) else { return }
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE, dd-MM-yyyy"
+            
+            let dateString = formatter.string(from: (coreDataEntry?.date)!)
+            
             
             guard let previousAmountClaimed = coreDataEntry?.amountClaimed else { return }
             guard let previousAmountClaimedAsDouble = Double(previousAmountClaimed) else { return }
@@ -147,7 +154,11 @@ class AddAllowanceViewController: UIViewController {
             guard let pencePerMile = claimAmounttextField.text else { return }
             guard let pencePerMileAsDouble = Double(pencePerMile) else { return }
             
-            if endMileageAsInt <= startMileageAsInt {
+            if dateTextFiled.text == "" || journeyStartTextField.text == "" || journeyEndTextField.text == "" || claimAmounttextField.text == "" {
+                Alert.incompleteFieldsAlert(on: self)
+            } else if dateTextFiled.text != dateString {
+                Alert.dateErrorAlert(on: self)
+            } else if endMileageAsInt <= startMileageAsInt {
                 Alert.fieldAlert(on: self)
             } else if endMileageAsInt > startMileageAsInt {
                 let diferenceBetweenStartAndEndMileage = endMileageAsInt - startMileageAsInt
@@ -198,13 +209,6 @@ class AddAllowanceViewController: UIViewController {
             print("Could Not Save The New Entry \(error.localizedDescription)")
         }
     }
-    
-    
-    
-    
-    
-    
-    
     
     // Start of code to create the date picker and the done button in the toolbar
     func createDatePicker()  {
@@ -280,6 +284,7 @@ class AddAllowanceViewController: UIViewController {
     }
     
     @objc func  showCalculateButtonDoneButtonPressed()  {
+        calculateMileageButton.isHidden = false
         self.view.endEditing(true)
     }
 }

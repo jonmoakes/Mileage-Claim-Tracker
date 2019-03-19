@@ -71,7 +71,7 @@ class AllowanceTableTableViewController: UITableViewController {
             formatter.dateFormat = "EEEE, dd - MM - yyy"
             let dateString = formatter.string(from: date)
             
-            cell.textLabel?.text = "\(dateString)\nCurrent Mileage Amount = \(entry.total ?? "0")\nCurrent Amount Claimed = \(entry.amountClaimed ?? "0")"
+            cell.textLabel?.text = "\(dateString)\nCurrent Mileage Amount = \(entry.total ?? "0") Miles\nCurrent Amount Claimed = £\(entry.amountClaimed ?? "0")"
             
             if (dateString.contains("Monday"))  {
                 cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 1)

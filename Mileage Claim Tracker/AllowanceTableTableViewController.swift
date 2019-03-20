@@ -64,7 +64,7 @@ class AllowanceTableTableViewController: UITableViewController {
             formatter.dateFormat = "EEEE, dd - MM - yyy"
             let dateString = formatter.string(from: date)
             
-            cell.textLabel?.text = "\(dateString)\nToday's Mileage = \(entry.total ?? "0") Miles\nClaimed Today = £\(entry.amountClaimed ?? "0")"
+            cell.textLabel?.text = "\(dateString)\nMileage Amount = \(entry.total ?? "0") Miles"
             
             if (dateString.contains("Monday"))  {
                 cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 1)
@@ -87,31 +87,13 @@ class AllowanceTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = mileageEntries[indexPath.row]
-        //self.performSegue(withIdentifier: "didSelectRow", sender: entry)
-        
-        let alertController = UIAlertController(title: "Choose An Option", message: "\nAdd To Current Entry:\nAdd A New Trip To The Day's Entry\n\nView Trip Logs:\nView Detailed Logs Of All The Entries You Have Entered For This Day", preferredStyle: .alert)
-        
-        let addToCurrentEntry = UIAlertAction(title: "Add To Current Entry", style: .default, handler: { action in self.performSegue(withIdentifier: "didSelectRow", sender: entry)})
-        alertController.addAction(addToCurrentEntry)
-        
-        let viewLogs = UIAlertAction(title: "View Trip Logs", style: .default, handler: { action in self.performSegue(withIdentifier: "goToTripsVC", sender: entry)})
-        alertController.addAction(viewLogs)
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(cancel)
-        
-        self.present(alertController, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToTripsVC", sender: entry)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "didSelectRow"  {
-            let addToVC = segue.destination as! AddAllowanceViewController
-            addToVC.mileageEntry = sender as? MileageEntry
-        }
-        
-        if segue.identifier == "goToTripsVC" {
-            let viewLogsVC = segue.destination as! ViewLogsViewController
-            viewLogsVC.logsEntry = sender as? MileageEntry
+        if segue.identifier == "goToTripsVC"  {
+            let tripsVC = segue.destination as! ViewLogsViewController
+            tripsVC.logsEntry = sender as? MileageEntry
         }
     }
     

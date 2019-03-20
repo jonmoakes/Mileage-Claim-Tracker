@@ -66,7 +66,6 @@ class AddAllowanceViewController: UIViewController {
             journeyEndTextField.text = ""
             claimAmounttextField.text = ""
             tripDescriptionTextField.text = ""
-            calculateMileageButton.setTitle("Tap To Update", for: .normal)
             calculateMileageButton.isEnabled = false
             resultLabel.text = mileageEntry.total
             result2Label.text = mileageEntry.amountClaimed
@@ -134,53 +133,8 @@ class AddAllowanceViewController: UIViewController {
                 calculateMileageButton.isEnabled = false
                 saveButton.isEnabled = true
             }
-        } else if calculateMileageButton.title(for: .normal) == "Tap To Update" {
-            
-            let coreDataEntry = mileageEntry
-            
-            guard let previousMileage = coreDataEntry?.total else { return }
-            guard let previousMileageAsDouble = Double(previousMileage) else { return }
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "EEEE, dd-MM-yyyy"
-            
-            let dateString = formatter.string(from: (coreDataEntry?.date)!)
-            
-            
-            guard let previousAmountClaimed = coreDataEntry?.amountClaimed else { return }
-            guard let previousAmountClaimedAsDouble = Double(previousAmountClaimed) else { return }
-            /////////////////
-            
-            
-            guard let startMileage = journeyStartTextField.text else { return }
-            guard let startMileageAsInt = Int(startMileage) else { return }
-            
-            guard let endMileage = journeyEndTextField.text else { return }
-            guard let endMileageAsInt = Int(endMileage) else { return }
-            
-            guard let pencePerMile = claimAmounttextField.text else { return }
-            guard let pencePerMileAsDouble = Double(pencePerMile) else { return }
-            
-            if dateTextFiled.text != dateString {
-                Alert.dateErrorAlert(on: self)
-            } else if endMileageAsInt <= startMileageAsInt {
-                Alert.fieldAlert(on: self)
-            } else if endMileageAsInt > startMileageAsInt {
-                let diferenceBetweenStartAndEndMileage = endMileageAsInt - startMileageAsInt
-                let mileage = String(diferenceBetweenStartAndEndMileage)
-                let moneyYouCanClaim = Double(mileage)! * pencePerMileAsDouble
-                
-                let newMileage = Double(mileage)! + previousMileageAsDouble
-                let newAmountToClaim = moneyYouCanClaim + previousAmountClaimedAsDouble
-                
-                let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", newAmountToClaim)
-                
-                resultLabel.text = String(newMileage)
-                result2Label.text = String(showAmountToClaimWith2DecimalPlaces)
-                saveButton.isEnabled = true
-                calculateMileageButton.isEnabled = false
-            }
         }
+        
     }
     
     func createNewMileageEntry()  {
@@ -346,5 +300,6 @@ extension UITextView {
         self.layer.borderColor = UIColor(white: 0, alpha: 0.90).cgColor
         self.layer.borderWidth = 1.0
         self.layer.masksToBounds = true
+        self.textContainerInset = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
     }
 }

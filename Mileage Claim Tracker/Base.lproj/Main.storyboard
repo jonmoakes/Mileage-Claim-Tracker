@@ -43,8 +43,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="WXr-IS-pFO" kind="show" identifier="didSelectRow" id="QZR-Sq-4Ht"/>
-                        <segue destination="SWf-kT-1zU" kind="show" identifier="goToTripsVC" id="700-gS-0Xv"/>
+                        <segue destination="SWf-kT-1zU" kind="show" identifier="goToTripsVC" id="t5u-zd-aq9"/>
+                        <segue destination="WXr-IS-pFO" kind="show" identifier="didSelectRow" id="aFb-7j-aeu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3O7-q4-LsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zr7-a6-ygl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="158.75"/>
+            <point key="canvasLocation" x="2034" y="159"/>
         </scene>
         <!--View Logs View Controller-->
         <scene sceneID="vjU-xy-ulu">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5f-EG-ZYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="158.77061469265368"/>
+            <point key="canvasLocation" x="2910" y="159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PGT-ee-uKF">
@@ -358,7 +358,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v0i-re-3fd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OWd-mX-408">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -16,6 +16,7 @@
 		AE0D46572241388100D43771 /* AllowanceTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D46562241388100D43771 /* AllowanceTableTableViewController.swift */; };
 		AE0D4659224144B100D43771 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D4658224144B100D43771 /* Alert.swift */; };
 		AE71EB1A2242370100C76079 /* ViewLogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71EB192242370100C76079 /* ViewLogsViewController.swift */; };
+		AE71EB1E224286AE00C76079 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71EB1D224286AE00C76079 /* HelpViewController.swift */; };
 		AE825BB92241538800D585C1 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE825BA32241538800D585C1 /* IQTextView.swift */; };
 		AE825BBA2241538800D585C1 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE825BA52241538800D585C1 /* IQPreviousNextView.swift */; };
 		AE825BBB2241538800D585C1 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE825BA62241538800D585C1 /* IQTitleBarButtonItem.swift */; };
@@ -47,6 +48,7 @@
 		AE0D46562241388100D43771 /* AllowanceTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowanceTableTableViewController.swift; sourceTree = "<group>"; };
 		AE0D4658224144B100D43771 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AE71EB192242370100C76079 /* ViewLogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLogsViewController.swift; sourceTree = "<group>"; };
+		AE71EB1D224286AE00C76079 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		AE825BA32241538800D585C1 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		AE825BA52241538800D585C1 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
 		AE825BA62241538800D585C1 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				AE825BA12241538800D585C1 /* IQKeyboardManagerSwift */,
 				AE0D463F2241360300D43771 /* AppDelegate.swift */,
 				AE0D4658224144B100D43771 /* Alert.swift */,
+				AE71EB1D224286AE00C76079 /* HelpViewController.swift */,
 				AE0D46562241388100D43771 /* AllowanceTableTableViewController.swift */,
 				AE0D46542241385A00D43771 /* AddAllowanceViewController.swift */,
 				AE71EB192242370100C76079 /* ViewLogsViewController.swift */,
@@ -270,6 +273,7 @@
 				AE825BC32241538800D585C1 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				AE0D46572241388100D43771 /* AllowanceTableTableViewController.swift in Sources */,
 				AE825BC02241538800D585C1 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				AE71EB1E224286AE00C76079 /* HelpViewController.swift in Sources */,
 				AE825BB92241538800D585C1 /* IQTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

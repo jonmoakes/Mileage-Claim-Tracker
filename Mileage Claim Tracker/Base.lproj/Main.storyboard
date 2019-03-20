@@ -35,6 +35,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Entries" id="Lcz-Pi-c2G">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="5Hk-4y-CFg"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CVq-Cz-DBL">
                             <connections>
                                 <segue destination="WXr-IS-pFO" kind="show" id="7FG-Wn-Hmh"/>
@@ -153,7 +154,7 @@
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Can Claim: ( In Pounds )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-Q5-cuY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claimed: ( In Pounds )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-Q5-cuY">
                                                 <rect key="frame" x="8" y="569" width="304" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -250,6 +251,7 @@
                         <viewLayoutGuide key="safeArea" id="fah-rh-c3X"/>
                     </view>
                     <navigationItem key="navigationItem" id="cIP-ZB-7tH">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GRW-sF-y77"/>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="UHq-Xf-ibr">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="WXr-IS-pFO" id="dfj-dT-WB3"/>

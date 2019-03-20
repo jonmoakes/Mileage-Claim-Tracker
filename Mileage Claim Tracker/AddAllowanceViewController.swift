@@ -106,18 +106,20 @@ class AddAllowanceViewController: UIViewController {
         
         if calculateMileageButton.title(for: .normal) == "Tap To Calculate" {
             guard let startMileage = journeyStartTextField.text else { return }
-            guard let startMileageAsInt = Int(startMileage) else { return }
+            guard let startMileageAsDouble = Double(startMileage) else { return }
             
             guard let endMileage = journeyEndTextField.text else { return }
-            guard let endMileageAsInt = Int(endMileage) else { return }
+            guard let endMileageAsDouble = Double(endMileage) else { return }
             
             guard let pencePerMile = claimAmounttextField.text else { return }
             guard let pencePerMileAsDouble = Double(pencePerMile) else { return }
             
-            if endMileageAsInt <= startMileageAsInt {
+            if endMileageAsDouble <= startMileageAsDouble {
                 Alert.fieldAlert(on: self)
-            } else if endMileageAsInt > startMileageAsInt {
-                let diferenceBetweenStartAndEndMileage = endMileageAsInt - startMileageAsInt
+            } else if (claimAmounttextField.text?.count)! < 4 || (claimAmounttextField.text?.count)! > 4 {
+                Alert.pencePerMileAlert(on: self)
+            } else if endMileageAsDouble > startMileageAsDouble {
+                let diferenceBetweenStartAndEndMileage = endMileageAsDouble - startMileageAsDouble
                 let mileage = String(diferenceBetweenStartAndEndMileage)
                 let moneyYouCanClaim = Double(mileage)! * pencePerMileAsDouble
                 let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", moneyYouCanClaim)

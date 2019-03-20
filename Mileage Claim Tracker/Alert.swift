@@ -37,5 +37,9 @@ struct Alert {
     static func dateErrorAlert(on vc: UIViewController) {
         showBasicAlert(on: vc, with: "Warning", message: "The Date You Have Chosen To For This Entry Does Not Match The Date You Chose When Originally Creating The Entry.\n\nIf You Chose This Date In Error, Please Select The Date Again And Make Sure It Matches The Date You Originally Chose When Creating The Entry.\n\nIf You Wish To Create A New Entry, Tap The Back Button And Then Tap The Plus Button In The Top Right To Create A New Entry.")
     }
+    
+    static func pencePerMileAlert(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Error", message: "Please Enter Your Pence Per Mile To 2 Decimal Points - Ie 0.50 For 50 Pence")
+    }
 }
 

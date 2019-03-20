@@ -55,6 +55,10 @@ class AddAllowanceViewController: UIViewController {
         tripDescriptionTextField.applyRoundedCorners()
         calculateMileageButton.applyRoundedCorners()
         
+        saveButton.setTitleTextAttributes([ NSAttributedString.Key.font: UIFont(name: "Noteworthy-Bold", size: 19)!], for: UIControl.State.disabled)
+        
+        saveButton.setTitleTextAttributes([ NSAttributedString.Key.font: UIFont(name: "Noteworthy-Bold", size: 19)!], for: UIControl.State.normal)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedObjectContext = appDelegate.persistentContainer.viewContext
         

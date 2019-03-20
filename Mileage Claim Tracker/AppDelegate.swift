@@ -19,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
+        UINavigationBar.appearance().barTintColor = UIColor.init(displayP3Red: 52.0/255.0, green: 123.0/255.0, blue: 246.0/255.0, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UIToolbar.appearance().tintColor = UIColor.init(displayP3Red: 52.0/255.0, green: 123.0/255.0, blue: 246.0/255.0, alpha: 1)
+        
+        let navigationFont = UIFont(name: "Noteworthy-Bold", size: 19)!
+        let navigationFontAttributes = [kCTFontAttributeName : navigationFont]
+        
+        UINavigationBar.appearance().titleTextAttributes = navigationFontAttributes as [NSAttributedString.Key : Any]
+        UIBarButtonItem.appearance().setTitleTextAttributes(navigationFontAttributes as [NSAttributedString.Key : Any], for: .normal)
+        
+        
         return true
     }
 

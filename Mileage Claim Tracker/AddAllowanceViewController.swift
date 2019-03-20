@@ -130,10 +130,7 @@ class AddAllowanceViewController: UIViewController {
                 
                 let moneyYouCanClaim = Double(mileage) * pencePerMileAsDouble
                 let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", moneyYouCanClaim)
-                
-        
             
-                
                 resultLabel.text = mileageAsStringTo2DecimalPlaces
                 result2Label.text = showAmountToClaimWith2DecimalPlaces
                 
@@ -146,7 +143,6 @@ class AddAllowanceViewController: UIViewController {
                 saveButton.isEnabled = true
             }
         }
-        
     }
     
     func createNewMileageEntry()  {
@@ -283,9 +279,6 @@ class AddAllowanceViewController: UIViewController {
         }
         self.view.endEditing(true)
     }
-    
-    
-    
 }
 
 extension UITextField {

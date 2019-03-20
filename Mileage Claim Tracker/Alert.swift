@@ -41,5 +41,31 @@ struct Alert {
     static func pencePerMileAlert(on vc: UIViewController) {
         showBasicAlert(on: vc, with: "Error", message: "Please Enter Your Pence Per Mile To 2 Decimal Points - Ie 0.50 For 50 Pence")
     }
+    
+    // Email Alerts
+    static func showEmailCancelledMessage(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Message Cancelled.", message: "Your Email Was Not Sent.")
+    }
+    
+    static func showEmailSavedMessage(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Draft Saved", message: "Your Message Was Saved To Your Draft Folder And Has Not Been Sent Yet.\n\nAccess The Drafts Tab In Your Apple Email App To Send The Message When You're Ready.")
+    }
+    
+    static func showEmailFailedMessage(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Email Saved", message: "Sorry, Your Message Did Not Send. Please Check Your Email Settings And Then Try Again.")
+    }
+    
+    static func showEmailSentMessage(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Thank You!", message: "Your Message Has Been Sent!")
+    }
+    
+    static func showSuccessEmailSentMessage(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Success!", message: "Your Message Has Been Sent!")
+    }
+    
+    
+    static func showNoEmailAccountFoundError(on vc: UIViewController) {
+        showBasicAlert(on: vc, with: "Error", message: "No Mail Account Detected. Please Make Sure The Apple Mail App Is Set Up In The 'Settings' App On Your Device.")
+    }
 }
 

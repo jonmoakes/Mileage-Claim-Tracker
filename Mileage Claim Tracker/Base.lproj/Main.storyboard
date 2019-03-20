@@ -23,7 +23,6 @@
                                 <items>
                                     <navigationItem title="Help" id="Yqv-qn-apk">
                                         <barButtonItem key="leftBarButtonItem" title="Close" id="lVJ-ML-49Z">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="closeButtonTapped:" destination="CGV-3o-gZX" id="3HX-lO-4g4"/>
                                             </connections>
@@ -635,41 +634,59 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H6j-hn-qqQ">
+                                <rect key="frame" x="16" y="179" width="343" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1G-Z0-ouk">
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Logs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFk-tQ-KHa">
-                                <rect key="frame" x="16" y="84" width="343" height="49"/>
+                                <rect key="frame" x="16" y="110" width="343" height="49"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H6j-hn-qqQ">
-                                <rect key="frame" x="16" y="149" width="343" height="502"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="top" secondItem="zFk-tQ-KHa" secondAttribute="bottom" constant="16" id="N5W-PM-9l7"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="zFk-tQ-KHa" secondAttribute="trailing" constant="16" id="OZW-Dc-jk6"/>
-                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="top" secondItem="YWu-Sc-ml2" secondAttribute="top" constant="20" id="Utl-Ek-gXN"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="bottom" secondItem="H6j-hn-qqQ" secondAttribute="bottom" constant="16" id="YqR-U3-zOD"/>
-                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="fVs-zz-Fza"/>
-                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="fit-Jo-pvH"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="H6j-hn-qqQ" secondAttribute="trailing" constant="16" id="xWa-Bk-wU4"/>
+                            <constraint firstItem="u1G-Z0-ouk" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="1bw-YT-qGt"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="zFk-tQ-KHa" secondAttribute="trailing" constant="16" id="1j0-Sh-1di"/>
+                            <constraint firstItem="u1G-Z0-ouk" firstAttribute="top" secondItem="YWu-Sc-ml2" secondAttribute="top" constant="8" id="6WH-H8-RS3"/>
+                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="TC8-Lk-8uY"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="bottom" secondItem="H6j-hn-qqQ" secondAttribute="bottom" constant="16" id="XW3-BD-eKd"/>
+                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="Xch-Df-vbT"/>
+                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="top" secondItem="zFk-tQ-KHa" secondAttribute="bottom" constant="20" id="bmU-wy-o7r"/>
+                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="top" secondItem="u1G-Z0-ouk" secondAttribute="bottom" constant="8" id="hl8-mQ-kVq"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="u1G-Z0-ouk" secondAttribute="trailing" constant="16" id="jhi-uJ-ff6"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="H6j-hn-qqQ" secondAttribute="trailing" constant="16" id="vYk-IL-No4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YWu-Sc-ml2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0CR-Ze-q0V">
+                        <barButtonItem key="rightBarButtonItem" title="Email" image="contact@2 " id="LrW-cK-P7E">
+                            <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="-2"/>
+                            <connections>
+                                <action selector="emailButtonTapped:" destination="SWf-kT-1zU" id="gaY-2O-pYd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="u1G-Z0-ouk" id="Qt7-Zg-JBV"/>
                         <outlet property="textView" destination="H6j-hn-qqQ" id="cNa-ae-cnG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5f-EG-ZYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2910" y="159"/>
+            <point key="canvasLocation" x="2909.5999999999999" y="158.77061469265368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PGT-ee-uKF">
@@ -692,6 +709,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
     </scenes>
     <resources>
         <image name="backgroundImage" width="1175" height="1509"/>
+        <image name="contact@2 " width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7FG-Wn-Hmh"/>

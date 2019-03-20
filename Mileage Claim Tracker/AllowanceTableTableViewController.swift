@@ -16,7 +16,7 @@ class AllowanceTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedObjectContext = appDelegate.persistentContainer.viewContext
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -24,6 +24,12 @@ class AllowanceTableTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchEntries()
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "backgroundImage")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0.6
     }
     
     func fetchEntries()  {
@@ -67,17 +73,17 @@ class AllowanceTableTableViewController: UITableViewController {
             cell.textLabel?.text = "\(dateString)\nMileage Amount = \(entry.total ?? "0") Miles\nMoney Claimed = £\(entry.amountClaimed ?? "0")"
             
             if (dateString.contains("Monday"))  {
-                cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 1)
+                cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Tuesday"))  {
-                cell.backgroundColor = UIColor.init(red: 251.0/255.0, green: 21.0/255.0, blue: 40.0/255.0, alpha: 1)
+                cell.backgroundColor = UIColor.init(red: 251.0/255.0, green: 21.0/255.0, blue: 40.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Wednesday")) {
-                cell.backgroundColor = UIColor.init(red: 255.0/255.0, green: 255.0/255.0, blue: 10.0/255.0, alpha: 1)
+                cell.backgroundColor = UIColor.init(red: 255.0/255.0, green: 255.0/255.0, blue: 10.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Thursday"))  {
-                cell.backgroundColor = UIColor.init(red: 95.0/255.0, green: 195.0/255.0, blue: 241.0/255.0, alpha: 1)
+                cell.backgroundColor = UIColor.init(red: 95.0/255.0, green: 195.0/255.0, blue: 241.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Friday")) {
-                cell.backgroundColor = UIColor.init(red: 252.0/255.0, green: 0.0/255.0, blue: 136.0/255.0, alpha: 1)
+                cell.backgroundColor = UIColor.init(red: 252.0/255.0, green: 0.0/255.0, blue: 136.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Saturday"))  {
-                cell.backgroundColor = UIColor.init(red: 193.0/255.0, green: 255.0/255.0, blue: 5.0/255.0, alpha: 1)
+                cell.backgroundColor = UIColor.init(red: 193.0/255.0, green: 255.0/255.0, blue: 5.0/255.0, alpha: 0.9)
             }  else if (dateString.contains("Sunday")) {
                 cell.backgroundColor = UIColor.magenta
             }

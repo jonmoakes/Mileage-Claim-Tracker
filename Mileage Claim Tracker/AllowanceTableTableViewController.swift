@@ -57,14 +57,14 @@ class AllowanceTableTableViewController: UITableViewController {
         let entry = self.mileageEntries[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         //  cell.textLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(22))
-        cell.textLabel?.font = UIFont(name: "MarkerFelt-Wide", size: 21)
+        cell.textLabel?.font = UIFont(name: "Noteworthy-Bold", size: 21)
         
         if let date = entry.date {
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE, dd - MM - yyy"
             let dateString = formatter.string(from: date)
             
-            cell.textLabel?.text = "\(dateString)\nMileage Amount = \(entry.total ?? "0") Miles"
+            cell.textLabel?.text = "\(dateString)\nMileage Amount = \(entry.total ?? "0") Miles\nMoney Claimed = £\(entry.amountClaimed ?? "0")"
             
             if (dateString.contains("Monday"))  {
                 cell.backgroundColor  = UIColor.init(red: 244.0/255.0, green: 190.0/255.0, blue: 95.0/255.0, alpha: 1)

@@ -120,11 +120,17 @@ class AddAllowanceViewController: UIViewController {
                 Alert.pencePerMileAlert(on: self)
             } else if endMileageAsDouble > startMileageAsDouble {
                 let diferenceBetweenStartAndEndMileage = endMileageAsDouble - startMileageAsDouble
-                let mileage = String(diferenceBetweenStartAndEndMileage)
-                let moneyYouCanClaim = Double(mileage)! * pencePerMileAsDouble
+                
+                let mileage = diferenceBetweenStartAndEndMileage
+                let mileageAsStringTo2DecimalPlaces = String(format: "%.1f", mileage)
+                
+                let moneyYouCanClaim = Double(mileage) * pencePerMileAsDouble
                 let showAmountToClaimWith2DecimalPlaces = String(format: "%.2f", moneyYouCanClaim)
                 
-                resultLabel.text = mileage
+        
+            
+                
+                resultLabel.text = mileageAsStringTo2DecimalPlaces
                 result2Label.text = showAmountToClaimWith2DecimalPlaces
                 
                 mileageSoFarLabel.isHidden = false

@@ -339,3 +339,12 @@ extension UIButton {
         self.layer.masksToBounds = true
     }
 }
+
+extension UITextView {
+    func applyRoundedCorners() {
+        self.layer.cornerRadius = 15.0
+        self.layer.borderColor = UIColor(white: 0, alpha: 0.90).cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.masksToBounds = true
+    }
+}

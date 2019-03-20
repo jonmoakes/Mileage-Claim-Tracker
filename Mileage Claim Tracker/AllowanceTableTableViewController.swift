@@ -41,13 +41,6 @@ class AllowanceTableTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "didSelectRow"  {
-            let composeVC = segue.destination as! AddAllowanceViewController
-            composeVC.mileageEntry = sender as? MileageEntry
-        }
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,7 +87,32 @@ class AllowanceTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = mileageEntries[indexPath.row]
-        self.performSegue(withIdentifier: "didSelectRow", sender: entry)
+        //self.performSegue(withIdentifier: "didSelectRow", sender: entry)
+        
+        let alertController = UIAlertController(title: "Choose An Option", message: "\nAdd To Current Entry:\nAdd A New Trip To The Day's Entry\n\nView Trip Logs:\nView Detailed Logs Of All The Entries You Have Entered For This Day", preferredStyle: .alert)
+        
+        let addToCurrentEntry = UIAlertAction(title: "Add To Current Entry", style: .default, handler: { action in self.performSegue(withIdentifier: "didSelectRow", sender: entry)})
+        alertController.addAction(addToCurrentEntry)
+        
+        let viewLogs = UIAlertAction(title: "View Trip Logs", style: .default, handler: { action in self.performSegue(withIdentifier: "goToTripsVC", sender: entry)})
+        alertController.addAction(viewLogs)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancel)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "didSelectRow"  {
+            let addToVC = segue.destination as! AddAllowanceViewController
+            addToVC.mileageEntry = sender as? MileageEntry
+        }
+        
+        if segue.identifier == "goToTripsVC" {
+            let viewLogsVC = segue.destination as! ViewLogsViewController
+            viewLogsVC.logsEntry = sender as? MileageEntry
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

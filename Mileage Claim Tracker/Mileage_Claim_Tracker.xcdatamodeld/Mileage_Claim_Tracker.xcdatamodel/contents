@@ -7,8 +7,9 @@
         <attribute name="journeyStart" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pencePerMile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tripDescription" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MileageEntry" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="MileageEntry" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

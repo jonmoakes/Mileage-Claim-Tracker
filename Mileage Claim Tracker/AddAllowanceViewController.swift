@@ -21,6 +21,8 @@ class AddAllowanceViewController: UIViewController {
     @IBOutlet var journeyEndTextField: UITextField!
     @IBOutlet var howMuchAreYouClaimingLabel: UILabel!
     @IBOutlet var claimAmounttextField: UITextField!
+    @IBOutlet var tripDescriptionLabel: UILabel!
+    @IBOutlet var tripDescriptionTextField: UITextField!
     @IBOutlet var calculateMileageButton: UIButton!
     @IBOutlet var mileageSoFarLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!
@@ -41,14 +43,16 @@ class AddAllowanceViewController: UIViewController {
         bottomLabel.isHidden = true
         
         createDatePicker()
-        journeyStartToolbar()
-        journeyEndToolbar()
+        createJourneyStartToolbar()
+        createJourneyEndToolbar()
+        createPencePerMileToolbar()
         showCalculateButtonToolbar()
         
         dateTextFiled.applyRoundedCorners()
         journeyStartTextField.applyRoundedCorners()
         journeyEndTextField.applyRoundedCorners()
         claimAmounttextField.applyRoundedCorners()
+        tripDescriptionTextField.applyRoundedCorners()
         calculateMileageButton.applyRoundedCorners()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -61,6 +65,7 @@ class AddAllowanceViewController: UIViewController {
             journeyStartTextField.text = ""
             journeyEndTextField.text = ""
             claimAmounttextField.text = ""
+            tripDescriptionTextField.text = ""
             calculateMileageButton.setTitle("Tap To Update", for: .normal)
             calculateMileageButton.isEnabled = false
             resultLabel.text = mileageEntry.total
@@ -74,6 +79,8 @@ class AddAllowanceViewController: UIViewController {
             journeyStartTextField.isHidden = true
             mileageEndLabel.isHidden = true
             journeyEndTextField.isHidden = true
+            tripDescriptionLabel.isHidden = true
+            tripDescriptionTextField.isHidden = true
             calculateMileageButton.isHidden = true
             resultLabel.isHidden = true
             result2Label.isHidden = true
@@ -184,6 +191,7 @@ class AddAllowanceViewController: UIViewController {
         newMileageEntry.journeyStart = self.journeyStartTextField.text
         newMileageEntry.journeyEnd = self.journeyEndTextField.text
         newMileageEntry.pencePerMile = self.claimAmounttextField.text
+        newMileageEntry.tripDescription = self.tripDescriptionTextField.text
         newMileageEntry.total = self.resultLabel.text
         newMileageEntry.amountClaimed = self.result2Label.text
         
@@ -199,6 +207,7 @@ class AddAllowanceViewController: UIViewController {
         mileageEntry.journeyStart = self.journeyStartTextField.text
         mileageEntry.journeyEnd = self.journeyEndTextField.text
         mileageEntry.pencePerMile = self.claimAmounttextField.text
+        mileageEntry.tripDescription = self.tripDescriptionTextField.text
         mileageEntry.total = self.resultLabel.text
         mileageEntry.amountClaimed = self.result2Label.text
         
@@ -239,16 +248,16 @@ class AddAllowanceViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func journeyStartToolbar()  {
-        let journeyStartToolbar = UIToolbar()
-        journeyStartToolbar.sizeToFit()
+    func createJourneyStartToolbar()  {
+        let createJourneyStartToolbar = UIToolbar()
+        createJourneyStartToolbar.sizeToFit()
         
-        let startJourneyDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(startJourneyDoneButtonPressed))
-        journeyStartToolbar.setItems([startJourneyDoneButton], animated: true)
-        journeyStartTextField.inputAccessoryView = journeyStartToolbar
+        let journeyStartToolbarDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(journeyStartToolbarDoneButtonPressed))
+        createJourneyStartToolbar.setItems([journeyStartToolbarDoneButton], animated: true)
+        journeyStartTextField.inputAccessoryView = createJourneyStartToolbar
     }
     
-    @objc func  startJourneyDoneButtonPressed()  {
+    @objc func  journeyStartToolbarDoneButtonPressed()  {
         if mileageEntry == nil {
             journeyEndTextField.isHidden = false
             mileageEndLabel.isHidden = false
@@ -256,19 +265,37 @@ class AddAllowanceViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func journeyEndToolbar()  {
-        let journeyEndToolbar = UIToolbar()
-        journeyEndToolbar.sizeToFit()
+    func createJourneyEndToolbar()  {
+        let createJourneyEndToolbar = UIToolbar()
+        createJourneyEndToolbar.sizeToFit()
         
-        let endJourneyDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(endJourneyDoneButtonPressed))
-        journeyEndToolbar.setItems([endJourneyDoneButton], animated: true)
-        journeyEndTextField.inputAccessoryView = journeyEndToolbar
+        let createJourneyEndDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(journeyEndDoneButtonPressed))
+        createJourneyEndToolbar.setItems([createJourneyEndDoneButton], animated: true)
+        journeyEndTextField.inputAccessoryView = createJourneyEndToolbar
     }
     
-    @objc func  endJourneyDoneButtonPressed()  {
+    @objc func  journeyEndDoneButtonPressed()  {
         if mileageEntry == nil {
             claimAmounttextField.isHidden = false
             howMuchAreYouClaimingLabel.isHidden = false
+        }
+        self.view.endEditing(true)
+    }
+    
+    func createPencePerMileToolbar()  {
+        let createPencePerMileToolbar = UIToolbar()
+        createPencePerMileToolbar.sizeToFit()
+        
+        let pencePerMileDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(pencePerMileDoneButtonPressed))
+        createPencePerMileToolbar.setItems([pencePerMileDoneButton], animated: true)
+        claimAmounttextField.inputAccessoryView = createPencePerMileToolbar
+    }
+    
+    @objc func  pencePerMileDoneButtonPressed()  {
+        if mileageEntry == nil {
+            tripDescriptionLabel.isHidden = false
+            tripDescriptionTextField.isHidden = false
+            
         }
         self.view.endEditing(true)
     }
@@ -279,17 +306,20 @@ class AddAllowanceViewController: UIViewController {
         
         let showCalculateButtonDoneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(showCalculateButtonDoneButtonPressed))
         calculateButtonToolbar.setItems([showCalculateButtonDoneButton], animated: true)
-        claimAmounttextField.inputAccessoryView = calculateButtonToolbar
+        tripDescriptionTextField.inputAccessoryView = calculateButtonToolbar
     }
     
     @objc func  showCalculateButtonDoneButtonPressed()  {
         if mileageEntry == nil {
             calculateMileageButton.isHidden = false
-        } else if mileageEntry != nil && dateTextFiled.text != "" || journeyStartTextField.text != "" || journeyEndTextField.text != "" || claimAmounttextField.text != "" {
+        } else if mileageEntry != nil && dateTextFiled.text != "" || journeyStartTextField.text != "" || journeyEndTextField.text != "" || claimAmounttextField.text != "" || tripDescriptionTextField.text != "" {
             calculateMileageButton.isEnabled = true
         }
         self.view.endEditing(true)
     }
+    
+    
+    
 }
 
 extension UITextField {

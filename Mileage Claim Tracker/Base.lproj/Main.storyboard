@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v0i-re-3fd">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="CGV-3o-gZX" customClass="HelpViewController" customModule="Mileage_Claim_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kv7-gc-Orz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jc-4L-u33">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Help" id="Yqv-qn-apk">
                                         <barButtonItem key="leftBarButtonItem" title="Close" id="lVJ-ML-49Z">
@@ -31,7 +31,7 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Q6-Hh-g60">
-                                <rect key="frame" x="16" y="84" width="343" height="563"/>
+                                <rect key="frame" x="16" y="84" width="382" height="632"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Adding An Entry:">
@@ -326,16 +326,16 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
             <objects>
                 <tableViewController id="1Cf-O4-h26" customClass="AllowanceTableTableViewController" customModule="Mileage_Claim_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBq-kJ-cQX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jTZ-jE-gKI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jTZ-jE-gKI" id="lAG-JD-UlP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -393,7 +393,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Entry:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZD-Rs-LTh">
-                                                <rect key="frame" x="8" y="28" width="304" height="36.5"/>
+                                                <rect key="frame" x="8" y="28.000000000000004" width="304" height="36.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -401,13 +401,13 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap To Enter Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Kn-Ga-hsV">
-                                                <rect key="frame" x="8" y="72.5" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="72.333333333333343" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage At Start Of Journey:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGU-0y-sbR">
-                                                <rect key="frame" x="8" y="122.5" width="304" height="36.5"/>
+                                                <rect key="frame" x="8" y="122.33333333333333" width="304" height="36.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="1" green="0.1148341604" blue="0.084108596300000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -415,13 +415,13 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Mileage At Start Of Journey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-39-lgg">
-                                                <rect key="frame" x="8" y="167" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="166.66666666666666" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage At End Of Journey:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOw-d1-TJ6">
-                                                <rect key="frame" x="8" y="217" width="304" height="36.5"/>
+                                                <rect key="frame" x="8" y="216.66666666666669" width="304" height="36.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="0.078050284230000003" green="0.94033044580000003" blue="0.1077779655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -429,13 +429,13 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Mileage At End Of Journey" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gl-5c-aU7">
-                                                <rect key="frame" x="8" y="261.5" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="261" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pence Per Mile Claimed For This Entry?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUR-gj-AKz">
-                                                <rect key="frame" x="8" y="311.5" width="304" height="71.5"/>
+                                                <rect key="frame" x="8" y="311" width="304" height="71.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="1" green="0.088616177460000001" blue="0.93445498279999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Description:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyk-HM-2Fd">
-                                                <rect key="frame" x="8" y="441" width="304" height="36.5"/>
+                                                <rect key="frame" x="8" y="440.66666666666669" width="304" height="36.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="0.94033044576644897" green="0.58059431080006751" blue="0.10600718673787758" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -451,19 +451,19 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter In Pence ( ie 0.45 For 45 Pence )" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V5q-6l-75x">
-                                                <rect key="frame" x="8" y="391" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="390.66666666666669" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uu-W0-QyF">
-                                                <rect key="frame" x="142.5" y="766" width="35" height="12"/>
+                                                <rect key="frame" x="142.66666666666666" y="766" width="35" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Mileage So Far Is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8W-JH-XHx">
-                                                <rect key="frame" x="8" y="595.5" width="304" height="36.5"/>
+                                                <rect key="frame" x="8" y="595" width="304" height="36.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
                                                 <color key="textColor" red="0.078050284230000003" green="0.94033044580000003" blue="0.1077779655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -471,7 +471,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM7-r9-VAu">
-                                                <rect key="frame" x="8" y="640" width="304" height="41"/>
+                                                <rect key="frame" x="8" y="639.33333333333337" width="304" height="41"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
                                                 <color key="textColor" red="1" green="0.1148341604" blue="0.084108596300000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -479,7 +479,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claimed: ( In Pounds )" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-Q5-cuY">
-                                                <rect key="frame" x="8" y="701" width="304" height="28.5"/>
+                                                <rect key="frame" x="8" y="700.33333333333337" width="304" height="28.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -487,7 +487,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaQ-dX-xzj">
-                                                <rect key="frame" x="8" y="737.5" width="304" height="49"/>
+                                                <rect key="frame" x="8" y="737" width="304" height="49"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
                                                 <color key="textColor" red="0.078050284230000003" green="0.94033044580000003" blue="0.1077779655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -495,13 +495,13 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWP-ar-qy4">
-                                                <rect key="frame" x="8" y="485.5" width="304" height="30"/>
+                                                <rect key="frame" x="8" y="485" width="304" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJj-oz-zCf">
-                                                <rect key="frame" x="16" y="535.5" width="288" height="44"/>
+                                                <rect key="frame" x="16" y="535" width="288" height="44"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -626,52 +626,44 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
             </objects>
             <point key="canvasLocation" x="2034" y="159"/>
         </scene>
-        <!--View Logs View Controller-->
+        <!--Trip Log-->
         <scene sceneID="vjU-xy-ulu">
             <objects>
                 <viewController id="SWf-kT-1zU" customClass="ViewLogsViewController" customModule="Mileage_Claim_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ta-PO-TmC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H6j-hn-qqQ">
-                                <rect key="frame" x="16" y="179" width="343" height="472"/>
+                                <rect key="frame" x="16" y="122" width="382" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1G-Z0-ouk">
-                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email, Then Tap The Envelope Button" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1G-Z0-ouk">
+                                <rect key="frame" x="16" y="72" width="382" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Logs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFk-tQ-KHa">
-                                <rect key="frame" x="16" y="110" width="343" height="49"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.99040489730000003" blue="0.01022912833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u1G-Z0-ouk" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="1bw-YT-qGt"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="zFk-tQ-KHa" secondAttribute="trailing" constant="16" id="1j0-Sh-1di"/>
                             <constraint firstItem="u1G-Z0-ouk" firstAttribute="top" secondItem="YWu-Sc-ml2" secondAttribute="top" constant="8" id="6WH-H8-RS3"/>
-                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="TC8-Lk-8uY"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="bottom" secondItem="H6j-hn-qqQ" secondAttribute="bottom" constant="16" id="XW3-BD-eKd"/>
-                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="Xch-Df-vbT"/>
-                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="top" secondItem="zFk-tQ-KHa" secondAttribute="bottom" constant="20" id="bmU-wy-o7r"/>
-                            <constraint firstItem="zFk-tQ-KHa" firstAttribute="top" secondItem="u1G-Z0-ouk" secondAttribute="bottom" constant="8" id="hl8-mQ-kVq"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="H6j-hn-qqQ" secondAttribute="trailing" constant="16" id="CyB-FN-8hc"/>
+                            <constraint firstItem="u1G-Z0-ouk" firstAttribute="top" secondItem="YWu-Sc-ml2" secondAttribute="top" constant="8" id="RIz-TB-bV9"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="bottom" secondItem="H6j-hn-qqQ" secondAttribute="bottom" constant="16" id="aTq-d0-JmK"/>
+                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="top" secondItem="u1G-Z0-ouk" secondAttribute="bottom" constant="20" id="bnf-Jr-d2k"/>
+                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="u1G-Z0-ouk" secondAttribute="trailing" constant="16" id="cyC-hJ-VeE"/>
+                            <constraint firstItem="u1G-Z0-ouk" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="fbl-kh-yMR"/>
                             <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="u1G-Z0-ouk" secondAttribute="trailing" constant="16" id="jhi-uJ-ff6"/>
-                            <constraint firstItem="YWu-Sc-ml2" firstAttribute="trailing" secondItem="H6j-hn-qqQ" secondAttribute="trailing" constant="16" id="vYk-IL-No4"/>
+                            <constraint firstItem="H6j-hn-qqQ" firstAttribute="leading" secondItem="YWu-Sc-ml2" secondAttribute="leading" constant="16" id="zeQ-MD-AxU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YWu-Sc-ml2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0CR-Ze-q0V">
+                    <navigationItem key="navigationItem" title="Trip Log" id="0CR-Ze-q0V">
                         <barButtonItem key="rightBarButtonItem" title="Email" image="contact@2 " id="LrW-cK-P7E">
                             <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="-2"/>
                             <connections>
@@ -686,7 +678,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5f-EG-ZYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909.5999999999999" y="158.77061469265368"/>
+            <point key="canvasLocation" x="2908.6956521739135" y="158.1521739130435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PGT-ee-uKF">
@@ -694,7 +686,7 @@ You Will Get A Confirmation Message That The Data Is Not Recoverable Should You 
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v0i-re-3fd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OWd-mX-408">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

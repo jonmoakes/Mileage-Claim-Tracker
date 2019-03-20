@@ -39,7 +39,7 @@ class ViewLogsViewController: UIViewController, MFMailComposeViewControllerDeleg
         if MFMailComposeViewController.canSendMail()  {
             
             if  emailTextField.text == ""  {
-                let alert = UIAlertController(title: "Error", message: "Please Fill In Your Email Address In The Box Provided", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Error", message: "Please Fill In Your Email Address In The Box Provided In Order To Send An Email", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
